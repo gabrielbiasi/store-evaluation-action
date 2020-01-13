@@ -8,21 +8,21 @@ const environment = process.argv[3];
 let url = ''
 switch(environment) {
   case 'development':
-    url = 'http://localhost:3310'
-    return
+    url = 'http://localhost:3310';
+    break;
   case 'staging':
-    url = 'https://trybe-evaluation.herokuapp.com/evaluation'
-    return
+    url = 'https://trybe-evaluation.herokuapp.com/evaluation';
+    break;
   case 'production':
-    url = ''
-    return
+    url = '';
+    break;
   default:
-    return
+    break;
 }
 
 console.log(evaluationData);
 
-axios.post('https://trybe-evaluation.herokuapp.com/evaluation', evaluationData)
+axios.post(url, evaluationData)
 .then((response) => {
   console.log(`Status: ${response.status}`);
   process.exit();
