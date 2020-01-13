@@ -4,6 +4,22 @@ const atob = require('atob');
 // https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
 const evaluationData = JSON.parse(atob(process.argv[2]));
 
+const environment = process.argv[3];
+let url = ''
+switch(environment) {
+  case 'development':
+    url = 'http://localhost:3310'
+    return
+  case 'staging':
+    url = 'https://trybe-evaluation.herokuapp.com/evaluation'
+    return
+  case 'production':
+    url = ''
+    return
+  default:
+    return
+}
+
 console.log(evaluationData);
 
 axios.post('https://trybe-evaluation.herokuapp.com/evaluation', evaluationData)

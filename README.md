@@ -20,6 +20,14 @@ JSON with structure below in the base64 format:
 }
 ```
 
+### `environment`
+
+Must be:
+
+- development
+- staging
+- production
+
 ## Outputs
 
 ## Simple usage example
