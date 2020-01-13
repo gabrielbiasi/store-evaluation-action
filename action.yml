@@ -13,4 +13,4 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.evaluation-data }}
-    = ${{ inputs.environment }}
+    - ${{ inputs.environment }}
