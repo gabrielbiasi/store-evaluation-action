@@ -1,7 +1,7 @@
 # store-evaluation-action
 Action to store evaluation in Tryber projects
 
-This action store evaluations from Tryber projects.
+This action receives evaluation data from an evaluator and store it in Forest Admin.
 
 ## Inputs
 
@@ -45,3 +45,7 @@ uses: betrybe/store-evaluation-action
   with:
     evaluation-data: ${{ steps.evaluator.outputs.result }}
 ```
+
+## Learn about GitHub Actions
+
+- https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-a-docker-container-action
