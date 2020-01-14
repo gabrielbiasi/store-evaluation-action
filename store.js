@@ -11,7 +11,7 @@ switch(environment) {
     url = 'http://localhost:3310';
     break;
   case 'staging':
-    url = 'https://trybe-evaluation.herokuapp.com/evaluation';
+    url = 'https://trybe-evaluation-staging.herokuapp.com/evaluation';
     break;
   case 'production':
     url = '';
