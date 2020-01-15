@@ -1,0 +1,16 @@
+name: 'Store evaluation'
+description: 'This action store evaluations from Tryber projects.'
+inputs:
+  evaluation-data:
+    description: 'JSON with structure below in the base64 format'
+    required: true
+  environment:
+    description: 'Environment'
+    required: true
+    default: 'development'
+runs:
+  using: 'docker'
+  image: Dockerfile
+  args:
+    - ${{ inputs.evaluation-data }}
+    - ${{ inputs.environment }}
