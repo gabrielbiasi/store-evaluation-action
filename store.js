@@ -5,16 +5,16 @@ const atob = require('atob');
 const evaluationData = JSON.parse(atob(process.argv[2]));
 
 const environment = process.argv[3];
-let url = ''
+let endpoint = ''
 switch(environment) {
   case 'development':
-    url = 'http://localhost:3310';
+    endpoint = 'http://localhost:3310';
     break;
   case 'staging':
-    url = 'https://trybe-evaluation-staging.herokuapp.com/evaluation';
+    endpoint = 'https://trybe-evaluation-staging.herokuapp.com/evaluation';
     break;
   case 'production':
-    url = '';
+    endpoint = '';
     break;
   default:
     break;
@@ -22,7 +22,7 @@ switch(environment) {
 
 console.log(evaluationData);
 
-axios.post(url, evaluationData)
+axios.post(endpoint, evaluationData)
 .then((response) => {
   console.log(`Status: ${response.status}`);
   process.exit();
