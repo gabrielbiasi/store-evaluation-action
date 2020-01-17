@@ -20,9 +20,14 @@ switch(environment) {
     break;
 }
 
-console.log(evaluationData);
+const evaluationResponse = {
+  ...evaluationData,
+  pr_number: parseInt(process.argv[4])
+}
 
-axios.post(endpoint, evaluationData)
+console.log(evaluationResponse);
+
+axios.post(endpoint, evaluationResponse)
 .then((response) => {
   console.log(`Status: ${response.status}`);
   process.exit();
