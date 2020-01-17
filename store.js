@@ -1,9 +1,6 @@
 const axios = require('axios');
 const atob = require('atob');
 
-console.log(process.env)
-console.log(process.argv)
-
 // https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
 const evaluationData = JSON.parse(atob(process.argv[2]));
 
@@ -25,7 +22,7 @@ switch(environment) {
 
 const evaluationResponse = {
   ...evaluationData,
-  pr_number: parseInt(process.argv[4]) || process.env.pr-number
+  pr_number: parseInt(process.argv[4])
 }
 
 console.log(evaluationResponse);
