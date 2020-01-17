@@ -25,7 +25,7 @@ switch(environment) {
 
 const evaluationResponse = {
   ...evaluationData,
-  pr_number: parseInt(process.argv[4]) || 18
+  pr_number: parseInt(process.argv[4])
 }
 
 console.log(evaluationResponse);
