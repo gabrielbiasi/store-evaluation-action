@@ -1,9 +1,6 @@
 const axios = require('axios');
 const atob = require('atob');
 
-console.log(process.argv)
-console.log(parseInt(process.argv[4]))
-
 // https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
 const evaluationData = JSON.parse(atob(process.argv[2]));
 
