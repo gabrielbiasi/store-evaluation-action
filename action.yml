@@ -8,9 +8,13 @@ inputs:
     description: 'Environment'
     required: true
     default: 'development'
+  pr-number:
+    description: 'Pull Request number that trigger build'
+    required: true
 runs:
   using: 'docker'
   image: Dockerfile
   args:
     - ${{ inputs.evaluation-data }}
     - ${{ inputs.environment }}
+    - ${{ inputs.pr-number }}

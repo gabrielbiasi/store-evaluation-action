@@ -28,6 +28,10 @@ Must be:
 - staging
 - production
 
+### `pr-number`
+
+Pull Request number that trigger build.
+
 ## Outputs
 
 ## Simple usage example
