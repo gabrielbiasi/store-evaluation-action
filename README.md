@@ -14,7 +14,7 @@ JSON with structure below in the base64 format:
   "github_username": "String",
   "github_repository_name": "String",
   "evaluations": [{
-    "requirement_id": "Integer",
+    "description": "String",
     "grade": "Integer"
   }, {...}]
 }
@@ -34,20 +34,17 @@ Pull Request number that trigger build.
 
 ## Outputs
 
-## Simple usage example
+## Usage example
 ```yml
-uses: betrybe/store-evaluation-action
-```
-
-## How to get evaluation data from an evaluator
-```yml
-- name: Jest evaluator
+- name: Evaluator
   id: evaluator
   uses: betrybe/jest-evaluator-action
 - name: Store evaluation action
   uses: betrybe/store-evaluation-action
   with:
     evaluation-data: ${{ steps.evaluator.outputs.result }}
+    environment: production
+    pr-number: ${{ steps.evaluator.outputs.pr-number }}
 ```
 
 ## Learn about GitHub Actions
