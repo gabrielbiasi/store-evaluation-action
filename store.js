@@ -8,13 +8,13 @@ const environment = process.argv[3];
 let endpoint = ''
 switch(environment) {
   case 'development':
-    endpoint = 'http://localhost:3310/evaluation/v2';
+    endpoint = 'http://localhost:3310/v2/evaluation';
     break;
   case 'staging':
-    endpoint = 'https://trybe-evaluation-staging.herokuapp.com/evaluation/v2';
+    endpoint = 'https://trybe-evaluation-staging.herokuapp.com/v2/evaluation';
     break;
   case 'production':
-    endpoint = 'https://trybe-evaluation-production.herokuapp.com/evaluation/v2';
+    endpoint = 'https://trybe-evaluation-production.herokuapp.com/v2/evaluation';
     break;
   default:
     break;
