@@ -30,9 +30,11 @@ console.log(evaluationResponse);
 axios.post(endpoint, evaluationResponse)
 .then((response) => {
   console.log(`Status: ${response.status}`);
+  console.log(response.body);
   process.exit();
 })
 .catch((error) => {
   console.log(error);
+  console.log(error.body)
   process.exit(1);
 });
