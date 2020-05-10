@@ -40,7 +40,7 @@ Pull Request number that trigger build.
   id: evaluator
   uses: betrybe/jest-evaluator-action
 - name: Store evaluation action
-  uses: betrybe/store-evaluation-action
+  uses: betrybe/store-evaluation-action@v2
   with:
     evaluation-data: ${{ steps.evaluator.outputs.result }}
     environment: production
