@@ -34,9 +34,6 @@ axios.post(endpoint, evaluationResponse)
   process.exit();
 })
 .catch((error) => {
-  console.log("ERROR");
-  console.log(error);
-  console.log("==========");
-  Object.keys(error).map(e => console.log(e));
+  console.log(error.response.data);
   process.exit(1);
 });
