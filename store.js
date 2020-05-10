@@ -8,13 +8,13 @@ const environment = process.argv[3];
 let endpoint = ''
 switch(environment) {
   case 'development':
-    endpoint = 'http://localhost:3310/evaluation';
+    endpoint = 'http://localhost:3310/v2/evaluation';
     break;
   case 'staging':
-    endpoint = 'https://trybe-evaluation-staging.herokuapp.com/evaluation';
+    endpoint = 'https://trybe-evaluation-staging.herokuapp.com/v2/evaluation';
     break;
   case 'production':
-    endpoint = 'https://trybe-evaluation-production.herokuapp.com/evaluation';
+    endpoint = 'https://trybe-evaluation-production.herokuapp.com/v2/evaluation';
     break;
   default:
     break;
@@ -30,9 +30,10 @@ console.log(evaluationResponse);
 axios.post(endpoint, evaluationResponse)
 .then((response) => {
   console.log(`Status: ${response.status}`);
+  console.log(response.body);
   process.exit();
 })
 .catch((error) => {
-  console.log(error);
+  console.log(error.response.data);
   process.exit(1);
 });
