@@ -1,8 +1,9 @@
 const axios = require('axios');
-const atob = require('atob');
+const Base64 = require('base64-string').Base64;
 
 // https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
-const evaluationData = JSON.parse(atob(process.argv[2]));
+const enc = new Base64();
+const evaluationData = JSON.parse(enc.decode(process.argv[2]));
 
 const environment = process.argv[3];
 let endpoint = ''
