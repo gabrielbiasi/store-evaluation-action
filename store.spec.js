@@ -1,6 +1,5 @@
-const btoa = require('btoa');
+const Base64 = require('base64-string').Base64;
 const execSync = require('child_process').execSync;
-const axios = require('axios');
 
 const buildPath = (absolutePath, filePath) => (`${absolutePath}/${filePath}`);
 
@@ -19,7 +18,8 @@ describe('Store', () => {
       ],
       pr_number: 9
     };
-    const evaluationDataInBase64 = btoa(JSON.stringify(evaluationData));
+    const enc = new Base64();
+    const evaluationDataInBase64 = enc.encode(JSON.stringify(evaluationData));
     const environment = 'development';
     const prNumber = '1';
 
