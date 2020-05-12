@@ -18,9 +18,8 @@
   },
   "homepage": "https://github.com/betrybe/store-evaluation-action#readme",
   "dependencies": {
-    "atob": "^2.1.2",
     "axios": "^0.19.1",
-    "btoa": "^1.2.1"
+    "base64-string": "^1.0.8"
   },
   "devDependencies": {
     "jest": "^26.0.1"
