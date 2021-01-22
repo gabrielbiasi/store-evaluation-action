@@ -44,7 +44,7 @@ Pull Request number that trigger build.
   with:
     evaluation-data: ${{ steps.evaluator.outputs.result }}
     environment: production
-    pr-number: ${{ steps.evaluator.outputs.pr-number }}
+    pr-number: ${{ github.event.inputs.pr_number }}
 ```
 
 ## Learn about GitHub Actions
